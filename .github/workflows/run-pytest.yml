@@ -13,7 +13,7 @@ jobs:
         python-version: ['3.9', '3.10', '3.11', '3.12']
         numpy-version: ['>=1.21,<2.0', '>=2.0']
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: |
           docker build -f bin/all-py.Dockerfile \
             --build-arg PYTHON_VERSION="${{ matrix.python-version }}" \
@@ -29,7 +29,7 @@ jobs:
     runs-on:
       ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: |
            docker build -f bin/necessary-py.Dockerfile \
              --build-arg PYTHON_VERSION='3.10' \
